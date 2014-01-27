@@ -91,19 +91,25 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.wrapper {
+    max-width: 920px;
+    min-width: 300px;
+    padding: 10px;
+    margin: 0 auto;
+}
 
+sup {
+    font-size: 0.5em;
+}
 
+h1 {
+    margin-bottom: 0.5em;
+}
 
-
-
-
-
-
-
-
-
-
-
+h2 {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
 
 
 
