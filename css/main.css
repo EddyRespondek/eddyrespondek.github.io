@@ -91,9 +91,25 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+* {
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+body {
+    font-family: 'Galano Classic Extra Light';
+    /*-moz-font-feature-settings: "liga=1, dlig=1";
+    -ms-font-feature-settings: "liga", "dlig";
+    -webkit-font-feature-settings: "liga", "dlig";
+    -o-font-feature-settings: "liga", "dlig";
+    font-feature-settings: "liga", "dlig";*/
+}
+
 .wrapper {
-    max-width: 920px;
-    min-width: 300px;
+    max-width: 1428px;
+    min-width: 320px;
     padding: 10px;
     margin: 0 auto;
 }
@@ -102,17 +118,362 @@ sup {
     font-size: 0.5em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Galano Classic Bold';
+    /*-moz-font-feature-settings: initial;
+    -ms-font-feature-settings: initial;
+    -webkit-font-feature-settings: initial;
+    -o-font-feature-settings: initial;
+    font-feature-settings: initial;*/
+}
+
 h1 {
-    margin-bottom: 0.5em;
+    margin: 0;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    color: #494950;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 h2 {
     margin-top: 2em;
     margin-bottom: 0.5em;
+    text-transform: uppercase;
+    color: #494950;
+    font-size: 1.2em;
+}
+
+p {
+    text-align: center;
+    font-size: 0.85em;
+    margin-top: 20px;
+    letter-spacing: 0.01em;
+    line-height: 2;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+.pos {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.nav-menu,
+.nav-top {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #494950;
+    z-index: 2;
+}
+
+.nav-top {
+    right: 100px;
+}
+
+.wrap-white { background: #ffffff; color: #aaa; }
+.wrap-lightgrey { background: #f4f4f4; }
+
+.wrap-darkgrey { background: #494950; }
+    .wrap-darkgrey h1 { color: #f4f4f4; }
+
+.portfolio {
+    padding: 60px 0;
+    position: relative;
+}
+
+    .portfolio ul {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: justify;
+        margin-top: 80px;
+    }
+
+        .portfolio ul li {
+            width: 21%;
+            display: inline-block;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            text-align: center;
+            padding: 1%;
+            border-radius: 3px;
+        }
+
+        .portfolio ul li.fix {
+            height: 1px;
+            margin: 0;
+            box-shadow: none;
+        }
+
+            .portfolio ul img {
+                width: 100%;
+            }
+
+            .portfolio ul .overlay {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                margin: 4.2%;
+                bottom: 0px;
+                right: 0px;
+                background-color: rgba(73,73,80,0.4);
+                opacity: 0;
+                color: #fff;
+                -webkit-transition: opacity 0.3s linear 0s;
+                transition: opacity 0.3s linear 0s;
+            }
+
+                .portfolio ul li:hover .overlay {
+                    opacity: 1;
+                }
+
+                .portfolio ul .name {
+                    display: inline-block;
+                    border-top: 1px solid #fff;
+                    border-bottom: 1px solid #fff;
+                    line-height: 1.4;
+                    padding: 7px 1px 1px 1px;
+                    font-family: 'Galano Classic Bold';
+                    text-transform: uppercase;
+                    font-size: 0.9em;
+                    margin: 10% 10% 0 10%;
+                }
+
+                .portfolio ul .features {
+                    position: absolute;
+                    bottom: 7.5%;
+                    text-align: center;
+                    width: 100%;
+                }
+
+                    .portfolio ul .features div,
+                    .portfolio ul .features a {
+                        display: inline-block;
+                        min-width: 24px;
+                        height: 24px;
+                        border: 1px solid #fff;
+                        border-radius: 13px;
+                        line-height: 1;
+                        margin: 0 1px;
+                    }
+                        
+                        .portfolio ul .features .fa {
+                            width: 24px;
+                            height: 24px;
+                        }
+
+                        .portfolio ul .features .fa:before {
+                            font-size: 0.9em;
+                            position: absolute;
+                            top: 6px;
+                            left: 0;
+                            width: 100%;
+                            color: #fff;
+                        }
+
+                        .portfolio ul .responsive {
+                            width: 50px;
+                        }
+
+                        .portfolio ul .responsive .fa {
+                            width: 24px;
+                            height: 24px;
+                            position: absolute;
+                            top: 0;
+                            left: 2px;
+                        }
+
+                        .portfolio ul .responsive .fa-tablet { left: 17px; }
+                        .portfolio ul .responsive .fa-mobile { left: 28px; }
+
+                        .portfolio ul .features .link { border: 1px solid #fff; }
+                        .portfolio ul .features .link:before { color: #fff; }
+
+
+.filter-nav {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+    .filter-nav .wrapper { 
+        padding: 0 10px; 
+    }
+
+    .filter-nav .filter-button {
+        display: block;
+        line-height: 1;
+        padding: 10px;
+        background-image: url('../img/filter.gif');
+        background-position: 10px 10px;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        width: 16px;
+        height: 14px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .filter-options {
+        display: none;
+    }
+
+
+.skills {
+    padding: 60px 0;
+}
+
+    .skills ul {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+        .skills ul li {
+            display: block;
+            width: 23%;
+            float: left;
+            text-align: center;
+            margin: 1%;
+        }
+
+            .skills ul .number {
+                font-size: 0.5em;
+                color: #aaa;
+                display: block;
+                line-height: 1;
+            }
+
+            .skills ul h2 {
+                margin: 0;
+                font-size: 1em;
+                margin-top: 10px;
+            }
+
+.clients {
+    padding: 60px 0;
+}
+
+.memberships {
+    padding: 60px 0;
+}
+
+.contact {
+    padding: 60px 0;
 }
 
 
 
+
+
+
+
+
+
+/** LOGO TESTS **/
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    transform: rotate(135deg);
+    transform-origin: 50% 50%;
+    position: relative;
+}
+
+.logo .bar {
+    width: 150%;
+    height: 15%;
+    background-color: gray;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 33.33%;
+    left: -33.33%;
+    transform-origin: 0% 0%;
+}
+
+.logo .bar-a { 
+    top: 142%;
+    left: 17%; 
+}
+
+.logo .bar-b { 
+    top: 120.5%;
+    left: 11.5%; 
+}
+
+.logo .bar-c { 
+    top: 105.5%;
+    left: 0.5%; 
+}
+
+.logo-2 {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-2 .bar-a,
+.logo-2 .bar-b,
+.logo-2 .bar-c {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* transform: rotate(0deg); */
+    /* transform-origin: 50% 50%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo-2 .inner {
+    height: 15%;
+    width: 150%;
+    background-color: #666;
+    transform: rotate(-45deg);
+    transform-origin: 50% 50%;
+    position: absolute;
+    top: 20%;
+    left: -45%;
+}
+
+.logo-2 .bar-a {
+    top: 0px;
+    left: 0px;
+}
+
+.logo-2 .bar-b {
+    top: 20px;
+    left: 0px;
+}
+
+.logo-2 .bar-c {
+    top: 40px;
+    left: 0px;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
